@@ -1,18 +1,31 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CountryComponent } from './country/country.component';
+import { PersonComponent } from './person/person.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GlobalErrorHandlerService } from './global-error-handler.service';
+import { GlobalErrorHandlerComponent } from './global-error-handler/global-error-handler.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CountryComponent,
+    PersonComponent,
+    PageNotFoundComponent,
+    GlobalErrorHandlerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    GlobalErrorHandlerService,
+    { provide: ErrorHandler, useClass: GlobalErrorHandlerService }    
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
