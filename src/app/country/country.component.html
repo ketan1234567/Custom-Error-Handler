@@ -1,9 +1,25 @@
 <h3>Add Country</h3>
-<form [countryForm]="countryForm" (ngSubmit)="onFormSubmit()">
+<form [formGroup]="countryForm" (ngSubmit)="onFormSubmit()">
     <p>Name:<input formControlName="name"></p>
     <p>Capital:<input formControlName="capital"></p>
     <p>Currency:<input formControlName="currency"></p>
     <p><button>Add</button></p>
-
-
 </form>
+
+
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Currency</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let data of displaydata$">
+      <td>{{data.name}}</td>
+      <td>{{data.capital}}</td>
+      <td>{{data.currency}}</td>
+      <button type="button" (click)="deletedata(data.id)">delete data</button>
+      <button type="button" (click)="loadCountryEdit(data.id)">Edit data</button>
+    </tr>
+  </table>
