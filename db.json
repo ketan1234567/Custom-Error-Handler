@@ -1,22 +1,3 @@
 {
-  "country": [
-    {
-      "name": "ffffff",
-      "capital": "ttttttt",
-      "currency": "uuuuuuuu",
-      "id": 4
-    },
-    {
-      "name": "fffff",
-      "capital": "ffffffffff",
-      "currency": "gggggggggg",
-      "id": 5
-    },
-    {
-      "name": "dddddddddd",
-      "capital": "yyyyyyyyyy",
-      "currency": "mmmmmmmmmmm",
-      "id": 6
-    }
-  ]
+  "country": []
 }

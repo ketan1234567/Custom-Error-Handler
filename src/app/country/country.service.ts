@@ -20,12 +20,12 @@ export class CountryService {
   DeleteData(id:any):Observable<any>{
     return this.http.delete<Country>(this.url+"/"+id)
   }
-  UpdateData(id:any){
-    return this.http.put<any>(this.url,id);
+  UpdateData(data:any):Observable<any>{
+    return this.http.put<any>(this.url+"/"+data.id,data);
 
   }
-  getAllCountryById(id:any){
-    return this.http.get(this.url+"/"+id)
+  getAllCountryById(id:number):Observable<Country>{
+    return this.http.get<Country>(this.url+"/"+id)
 
   }
 

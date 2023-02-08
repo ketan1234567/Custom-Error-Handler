@@ -25,3 +25,8 @@
 .parent-container {
     padding-left: 10px;
 }
+
+.error{
+    color:red !important;
+    font-size: 15px;
+}
