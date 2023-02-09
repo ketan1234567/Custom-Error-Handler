@@ -2,7 +2,6 @@
 <form [formGroup]="countryForm" (ngSubmit)="onFormSubmit()">
     <p>Name:<input formControlName="name"></p>
       <label *ngIf="countryForm.get('name')?.invalid && countryForm.get('name')?.touched" class="error"> Name is required</label>
-   
     <p>Capital:<input formControlName="capital"></p>
  <label *ngIf="countryForm.get('capital')?.invalid && countryForm.get('capital')?.touched" class="error">capital is required</label>
     <p>Currency:<input formControlName="currency">    </p>

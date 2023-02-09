@@ -10,15 +10,14 @@ import { CurrencyPipe } from '@angular/common';
 
 })
 export class CountryComponent implements OnInit {
-  displaydata$: any = [];
-  countryUpdate: any;
-  tabledata: any;
+  displaydata$:any
+  countryUpdate:any='';
+  tabledata:any='';
   processValidation = false;
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
     this.getdata();
-
   }
   countryForm = new FormGroup({
     id: new FormControl(),
@@ -27,10 +26,8 @@ export class CountryComponent implements OnInit {
     currency: new FormControl('', Validators.required)
   });
   onFormSubmit() {
-
     let country = this.countryForm.value;
-
-    this.countryService.addCountry(country)
+    this.countryService.addCountry(country as Country)
       .subscribe(data => {
         this.processValidation = true;
         this.getdata();
@@ -43,15 +40,9 @@ export class CountryComponent implements OnInit {
         },
 
       );
-
-
-
-
-
     //  setTimeout(() => {
     //   this.getdata();
     //  }, 2000);
-
   }
   getdata() {
     this.countryService.getCountry().subscribe(data1 => {
@@ -69,7 +60,7 @@ export class CountryComponent implements OnInit {
   }
   updatedata() {
     const updatedata = this.countryForm.value;
-    this.countryService.UpdateData(updatedata).subscribe(item => {
+    this.countryService.UpdateData(updatedata as Country).subscribe(item => {
       console.log(item);
       this.getdata();
       this.countryForm.reset();

@@ -9,19 +9,20 @@ import { Country } from './country';
 export class CountryService {
   url= "http://localhost:3000/country";  
   constructor(private http:HttpClient) { }
-  addCountry(country:any):Observable<any>{
+  addCountry(country:Country):Observable<Country>{
     return this.http.post<Country>(this.url,country)
 
   }
-  getCountry():Observable<any>{
+  getCountry():Observable<Country>{
     return this.http.get<Country>(this.url)
 
   }
-  DeleteData(id:any):Observable<any>{
+  DeleteData(id:number):Observable<Country>{
     return this.http.delete<Country>(this.url+"/"+id)
   }
-  UpdateData(data:any):Observable<any>{
-    return this.http.put<any>(this.url+"/"+data.id,data);
+  UpdateData(data:Country):Observable<Country>{
+
+    return this.http.put<Country>(this.url+"/"+data.id,data);
 
   }
   getAllCountryById(id:number):Observable<Country>{

@@ -1,0 +1,33 @@
+<form [formGroup]="BookForm" (ngSubmit)="OnSubmitForm()">
+    <label for="book_name">Book Name:</label><br>
+    <input formControlName="book_name"><br>
+    <label for="book_category">Book Category:</label><br>
+    <input formControlName="book_category"><br><br>
+    <label for="book_author"> Book Author:</label><br>
+    <input formControlName="book_author"><br><br>
+<button [disabled]="BookForm.invalid">Submit</button>
+<button (click)="$event.preventDefault();UpdateData()">Update</button>
+  </form> 
+  <br>
+  <!-- Tabel start -->
+  <table>
+    <tr>
+
+        <th>Book Name</th>
+        <th>Book Category</th>
+        <th>Book Author</th>
+        <th>Action</th>
+    
+    </tr>
+    <tr *ngFor="let data of DisplayBookdata$ ">
+      <td>{{data.book_name}}</td>
+      <td>{{data.book_category}}</td>
+      <td>{{data.book_author}}</td>
+      <td><button (click)="loadEditData(data.id)">Edit</button>
+        <button (click)="deletedata(data.id)">Delete</button>
+    
+    </td>
+    </tr>
+  </table>
+  <!-- Tabel End-->
+

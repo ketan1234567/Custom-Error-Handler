@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   <ul>
    <li><a routerLink="/country" routerLinkActive="active">Country</a></li>
    <li><a routerLink="/person" routerLinkActive="active">Person</a></li>
+   <li><a routerLink="/books" routerLinkActive="active">Books</a></li>
   </ul> 
 </nav>  
 <div ngClass = "parent-container">	

@@ -8,6 +8,7 @@ import { GlobalErrorHandlerService } from './global-error-handler.service';
 import { GlobalErrorHandlerComponent } from './global-error-handler/global-error-handler.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   imports: [     
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     CountryComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BookComponent
   ],
   providers: [
     GlobalErrorHandlerService,
