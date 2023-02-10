@@ -1,0 +1,30 @@
+<h1>artciles works!</h1>
+
+<form [formGroup]="ArticleForm" (ngSubmit)="OnFormSubmit()">
+    <label for="article_name" >Article name:</label>
+    <p *ngIf="ArticleForm.get('article_name') && ArticleForm.get('article_name')?.touched "> This is Required</p>
+    <input formControlName="article_name"><br>
+    <label for="article_category">Article Category:</label><br>
+    <input formControlName="article_category"><br><br>
+    <label for="article_author">Article Author:</label><br>
+    <input formControlName="article_author"><br><br>
+   <button [disabled]="ArticleForm.invalid">Submit</button>
+   <button (click)="$event.preventDefault();UpdateData()" >Update</button>
+  </form> 
+  
+<table>
+    <tr>
+      <th>Article_name</th>
+      <th>Article_category</th>
+      <th>Article_Author</th>
+    </tr>
+    
+    <tr *ngFor="let data of ArticleDisplayData$">
+        <td>{{data.article_name}}</td>
+        <td>{{data.article_category}}</td>
+        <td>{{data.article_author}}</td>
+
+        <td><button (click)="deletedata(data.id)">delete</button></td>
+        <td><button (click)="loadEditArticles(data.id)">Edit</button></td>
+    </tr>
+  </table>

@@ -16,7 +16,6 @@ export class BookComponent implements OnInit {
 
   }
   constructor(private BookServices: ServiceService) { }
-
   BookForm = new FormGroup({
     id: new FormControl(),
     book_name: new FormControl('', Validators.required),
@@ -31,6 +30,7 @@ export class BookComponent implements OnInit {
       this.DisplayBookdata$ = data;
     })
   }
+
 
   loadEditData(id: number) {
     this.BookServices.GetBookById(id).subscribe(data => {
@@ -48,8 +48,6 @@ export class BookComponent implements OnInit {
       console.log(data);
       this.BookForm.reset();
       this.getbooksData();
-
-
     })
 
   }

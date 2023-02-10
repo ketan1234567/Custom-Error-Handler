@@ -9,19 +9,24 @@ import { GlobalErrorHandlerComponent } from './global-error-handler/global-error
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './book/book.component';
+import { ArtcilesComponent } from './artciles/artciles.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [     
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    
   ],
   declarations: [
     AppComponent,
     CountryComponent,
     PageNotFoundComponent,
-    BookComponent
+    BookComponent,
+    ArtcilesComponent
   ],
   providers: [
     GlobalErrorHandlerService,
