@@ -22,22 +22,24 @@
   ],
   "article": [
     {
-      "id": 2,
-      "article_name": "vishal",
-      "article_category": "hhhhh",
-      "article_author": "ttttttttttttttt"
-    },
-    {
       "id": 3,
       "article_name": "ddddd",
       "article_category": "ddddddddd",
-      "article_author": "rrrrrrrr"
+      "article_author": "ttttttt"
     },
     {
       "id": 4,
       "article_name": "sss",
       "article_category": "ppppppppp",
       "article_author": "uuuuuuuuu"
+    }
+  ],
+  "Bank": [
+    {
+      "id": 5,
+      "Bank_name": "ttttttttttttttt",
+      "Bank_category": "tttttttttt",
+      "Bank_author": "snehal"
     }
   ]
 }

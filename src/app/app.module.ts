@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './book/book.component';
 import { ArtcilesComponent } from './artciles/artciles.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BankComponent } from './bank/bank.component';
 
 @NgModule({
   imports: [     
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CountryComponent,
     PageNotFoundComponent,
     BookComponent,
-    ArtcilesComponent
+    ArtcilesComponent,
+    BankComponent
   ],
   providers: [
     GlobalErrorHandlerService,

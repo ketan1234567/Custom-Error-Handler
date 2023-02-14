@@ -1,0 +1,52 @@
+<h1>bank works!</h1>
+
+<form [formGroup]="BankForm" (ngSubmit)="onFormSubmit()">
+    <label for="Bank_name">Bank_name:</label><br>
+    <input formControlName="Bank_name" ><br>
+    <p *ngIf="BankForm.get('Bank_name')?.invalid && BankForm.get('Bank_name')?.touched" class="error"> Bank_name is Required </p>
+    <label for="Bank_category">Last name:</label><br>
+    <input formControlName="Bank_category"><br><br>
+    <p *ngIf="BankForm.get('Bank_category')?.invalid && BankForm.get('Bank_category')?.touched"  class="error"> Bank_category is Required </p>
+    <label for="Bank_author">Last name:</label><br>
+    <input formControlName="Bank_author"><br><br>
+    <p *ngIf="BankForm.get('Bank_author') && BankForm.get('Bank_author')?.touched"  class="error"> Bank_author is Required </p>
+    <button [disabled]="BankForm.invalid">submit</button>
+    <button (click)="$event.preventDefault();UpdateBankNames()">UpdateBankNames</button>
+  </form> 
+  <br><br>
+  <div *ngIf="statusCode; else processing">
+    <div *ngIf="statusCode === 201" class="success">
+      Article added successfully.
+    </div>
+    <div *ngIf="statusCode === 200" class="success">
+      Article updated successfully.
+    </div>
+    <div *ngIf="statusCode === 204" class="success">
+      Article deleted successfully.
+    </div>
+    <div *ngIf="statusCode === 500  " class="error">
+      Internal Server Error.
+    </div>
+  </div>
+  <ng-template #processing>
+    <img *ngIf="requestProcessing" src="assets/images/loading.gif">
+  </ng-template>
+
+<table>
+    <tr>
+      <th>Bank_name</th>
+      <th>Bank_category</th>
+      <th>Bank_author</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let data of displayBankName$">
+      <td>{{data.Bank_name}}</td>
+      <td>{{data.Bank_category}}</td>
+      <td>{{data.Bank_author}}</td>
+
+      <td><button (click)="loadEditBankName(data.id)">Edit</button></td>
+      <td><button (click)="deleteBankName(data.id)">delete</button></td>
+
+    </tr>
+  </table>
+
