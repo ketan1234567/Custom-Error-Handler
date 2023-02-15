@@ -35,7 +35,6 @@ export class BankService {
     return this.http.delete(this.BankUrl+"/"+id).pipe(
       tap(id=>(console.log(id))),
       catchError(this.handleError)
-      
     )
   }
   UpdateBankName(data:any):Observable<any>{

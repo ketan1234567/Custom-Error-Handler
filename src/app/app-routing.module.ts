@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BookComponent } from './book/book.component';
 import { ArtcilesComponent } from './artciles/artciles.component';
 import { BankComponent } from './bank/bank.component';
+import { CollageComponent } from './collage/collage.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:"bank",
     component:BankComponent
+  },
+  {
+    path:"collage",
+    component:CollageComponent
   },
   {
     path: '',

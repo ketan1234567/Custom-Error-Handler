@@ -1,0 +1,28 @@
+
+<form [formGroup]="CollageForm" (ngSubmit)="OnFormSubmit()">
+    <label for="name">Collage_name</label><br>
+    <input formControlName="name"><br>
+    <label for="category">Category</label><br>
+    <input formControlName="category"><br><br>
+    <label for="roll_no">Roll No</label><br>
+    <input formControlName="roll_no"><br><br>
+   <button>submit</button>
+   <button (click)="UpdateData()">Update Data</button>
+  </form> 
+<table>
+    <tr>
+      <th>Collage Name</th>
+      <th>Collage Category</th>
+      <th>Collage Roll No</th>
+    </tr>
+    <tr *ngFor="let data of CollageData$">
+      <td>{{data.name}}</td>
+      <td>{{data.category}}</td>
+      <td>{{data.roll_no}}</td>
+      <td>
+        <button (click)="LoadEditData(data.id)">Edit</button>
+        <button (click)="deleteData(data.id)">Delete</button>
+
+      </td>
+    </tr>
+  </table>

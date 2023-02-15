@@ -41,5 +41,25 @@
       "Bank_category": "tttttttttt",
       "Bank_author": "snehal"
     }
+  ],
+  "collage": [
+    {
+      "id": 2,
+      "name": "shivaji Mahavidayalla Udgir",
+      "category": "all",
+      "roll_no": 13
+    },
+    {
+      "id": 3,
+      "name": "shivaji Mahavidayalla Udgir",
+      "category": "all",
+      "roll_no": 13
+    },
+    {
+      "id": 4,
+      "name": "shivaji Mahavidayalla Udgir",
+      "category": "all",
+      "roll_no": 13
+    }
   ]
 }

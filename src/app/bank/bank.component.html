@@ -31,7 +31,6 @@
   <ng-template #processing>
     <img *ngIf="requestProcessing" src="assets/images/loading.gif">
   </ng-template>
-
 <table>
     <tr>
       <th>Bank_name</th>
@@ -43,7 +42,6 @@
       <td>{{data.Bank_name}}</td>
       <td>{{data.Bank_category}}</td>
       <td>{{data.Bank_author}}</td>
-
       <td><button (click)="loadEditBankName(data.id)">Edit</button></td>
       <td><button (click)="deleteBankName(data.id)">delete</button></td>
 

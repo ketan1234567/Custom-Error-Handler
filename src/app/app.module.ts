@@ -12,6 +12,7 @@ import { BookComponent } from './book/book.component';
 import { ArtcilesComponent } from './artciles/artciles.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BankComponent } from './bank/bank.component';
+import { CollageComponent } from './collage/collage.component';
 
 @NgModule({
   imports: [     
@@ -28,7 +29,8 @@ import { BankComponent } from './bank/bank.component';
     PageNotFoundComponent,
     BookComponent,
     ArtcilesComponent,
-    BankComponent
+    BankComponent,
+    CollageComponent
   ],
   providers: [
     GlobalErrorHandlerService,
